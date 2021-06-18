@@ -10,7 +10,7 @@ import (
 	"os/exec"
 )
 
-const wpscan = "/usr/local/bin/wpscan"
+const wpscan = "/usr/bin/wpscan"
 
 type SingleUrl struct {
 	Action string `json:"Action"`
