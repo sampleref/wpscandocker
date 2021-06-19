@@ -90,7 +90,7 @@ func CheckSingleUrl(w http.ResponseWriter, r *http.Request) {
 	go func(url string, filePath string) {
 		fmt.Printf("Async Check URL Started for URL %s at file %s \n", url, filePath)
 		//Perform check
-		command := wpscan + " -e ap --url " + checkUrl.Url + " --output=" + randFilePath + " --format json"
+		command := wpscan + " -e ap --ignore-main-redirect --url " + checkUrl.Url + " --output=" + randFilePath + " --format json"
 		output := readCommandOutput(command)
 		fmt.Printf("Async Check URL Completed with output %s for url %s \n", output, url)
 	}(checkUrl.Url, randFilePath)
