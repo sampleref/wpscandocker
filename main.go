@@ -4,6 +4,7 @@ import (
 	"github.com/gorilla/mux"
 	"log"
 	"net/http"
+	"os"
 	"wpscandocker/wpscan"
 )
 
@@ -18,6 +19,8 @@ func handleRequests() {
 }
 
 func main() {
+	log.SetOutput(os.Stdout)
+	log.SetFlags(log.LstdFlags | log.Llongfile)
 	log.Printf("Starting to serve on 8080...\n")
 	handleRequests()
 }
